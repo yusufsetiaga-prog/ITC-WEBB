@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071e40">
+<title>ITC | Informatika Club SMPN 34</title>
+
+<style>
+:root {
+  --navy:#071e40;
+  --blue:#1264c0;
+  --cyan:#19c5e8;
+  --purple:#7559df;
+  --light:#f2f7ff;
+  --white:#ffffff;
+  --text:#20334d;
+  --muted:#718096;
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+  backdrop-filter:none !important;
+}
+
+html {
+  scroll-behavior:smooth;
+  scroll-padding-top:85px;
+}
+
+body {
+  background:#f5f8ff;
+  color:var(--text);
+  line-height:1.7;
+}
+
+a,button {
+  -webkit-tap-highlight-color:transparent;
+}
+
+/* INTRO */
+.intro {
+  position:fixed;
+  inset:0;
+  z-index:99999;
+  background:linear-gradient(135deg,#06152f,#103f83,#087dbb);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:25px;
+  transition:opacity .5s,visibility .5s;
+}
+
+.intro.hide {
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+
+.intro-content {
+  max-width:650px;
+  animation:appear 1s ease;
+}
+
+.intro-logo {
+  width:105px;
+  height:105px;
+  object-fit:contain;
+  background:white;
+  border-radius:22px;
+  padding:9px;
+  margin-bottom:20px;
+}
+
+.intro h1 {
+  font-size:clamp(35px,8vw,65px);
+  line-height:1.1;
+  letter-spacing:2px;
+  font-weight:900;
+}
+
+.intro p {
+  color:#d7edff;
+  margin:12px 0 25px;
+}
+
+.intro button {
+  border:0;
+  background:linear-gradient(90deg,#19c5e8,#5a9cff);
+  color:#071e40;
+  padding:15px 27px;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.intro button:active {
+  transform:scale(.96);
+}
+
+@keyframes appear {
+  from {opacity:0;transform:translateY(25px)}
+  to {opacity:1;transform:translateY(0)}
+}
+
+/* HEADER */
+header {
+  position:sticky;
+  top:0;
+  z-index:5000;
+  background:white;
+  border-bottom:1px solid #e5eaf2;
+}
+
+.navbar {
+  max-width:1200px;
+  margin:auto;
+  padding:12px 22px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  min-height:75px;
+}
+
+.brand {
+  display:flex;
+  align-items:center;
+  gap:11px;
+  color:var(--navy);
+  text-decoration:none;
+  font-size:17px;
+  font-weight:800;
+}
+
+.brand img {
+  width:43px;
+  height:43px;
+  object-fit:contain;
+  border-radius:9px;
+}
+
+.brand span {
+  display:block;
+  font-size:10px;
+  letter-spacing:1.5px;
+  color:var(--muted);
+  font-weight:600;
+}
+
+.nav-links {
+  display:flex;
+  align-items:center;
+  gap:5px;
+  list-style:none;
+}
+
+.nav-links a {
+  display:block;
+  text-decoration:none;
+  color:#40536a;
+  font-size:13px;
+  font-weight:bold;
+  padding:10px 12px;
+  border-radius:7px;
+  transition:.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color:#1264c0;
+  background:#eaf4ff;
+}
+
+.menu-btn {
+  display:none;
+  border:0;
+  background:#edf5ff;
+  color:var(--navy);
+  width:43px;
+  height:43px;
+  border-radius:8px;
+  font-size:23px;
+  cursor:pointer;
+}
+
+/* HERO */
+.hero {
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(120deg,#071e40 0%,#1056a2 65%,#087eae 100%);
+  color:white;
+  padding:105px 22px;
+}
+
+.hero::before {
+  content:"";
+  position:absolute;
+  width:320px;
+  height:320px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:50%;
+  right:-100px;
+  top:-100px;
+}
+
+.hero::after {
+  content:"";
+  position:absolute;
+  width:220px;
+  height:220px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:50%;
+  right:80px;
+  bottom:-150px;
+}
+
+.hero-content {
+  position:relative;
+  z-index:2;
+  max-width:1100px;
+  margin:auto;
+}
+
+.hero-label {
+  display:inline-block;
+  color:#bceaff;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.2);
+  padding:7px 13px;
+  border-radius:5px;
+  font-size:11px;
+  letter-spacing:2px;
+  font-weight:bold;
+  margin-bottom:24px;
+}
+
+.hero h1 {
+  font-size:clamp(45px,9vw,82px);
+  line-height:1.08;
+  margin-bottom:20px;
+  font-weight:900;
+}
+
+.hero h1 span {
+  color:#49d8f2;
+}
+
+.hero-line {
+  width:75px;
+  height:4px;
+  border-radius:5px;
+  background:linear-gradient(90deg,#19c5e8,#9b8bff);
+  margin:27px 0;
+}
+
+.hero p {
+  max-width:600px;
+  color:#d6e9ff;
+  font-size:16px;
+}
+
+.hero-buttons {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:30px;
+}
+
+.hero-button {
+  display:inline-block;
+  background:white;
+  color:var(--navy);
+  padding:13px 23px;
+  border-radius:7px;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:bold;
+  transition:.2s;
+}
+
+.hero-button:hover {
+  background:#bceeff;
+  transform:translateY(-2px);
+}
+
+.hero-button.secondary {
+  background:transparent;
+  color:white;
+  border:1px solid rgba(255,255,255,.5);
+}
+
+/* GENERAL */
+.container {
+  max-width:1100px;
+  margin:auto;
+  padding:80px 22px;
+}
+
+.section-label {
+  color:var(--blue);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:3px;
+  margin-bottom:10px;
+}
+
+.section-title {
+  color:var(--navy);
+  font-size:32px;
+  line-height:1.3;
+  margin-bottom:15px;
+}
+
+.section-desc {
+  color:var(--muted);
+  max-width:650px;
+  font-size:14px;
+}
+
+.divider {
+  width:55px;
+  height:4px;
+  background:linear-gradient(90deg,var(--blue),var(--cyan));
+  border-radius:5px;
+  margin:20px 0;
+}
+
+/* ABOUT */
+.about-grid {
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:40px;
+  align-items:center;
+}
+
+.about-box {
+  background:white;
+  padding:30px;
+  border:1px solid #e2eaf5;
+  border-radius:12px;
+  border-top:4px solid var(--blue);
+  box-shadow:0 8px 30px rgba(25,60,110,.05);
+}
+
+.about-box h3 {
+  color:var(--navy);
+  margin-bottom:10px;
+}
+
+.about-box p {
+  color:var(--muted);
+  font-size:14px;
+}
+
+.stats {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:13px;
+}
+
+.stat {
+  background:white;
+  padding:23px;
+  border:1px solid #e3ebf6;
+  border-radius:10px;
+  transition:.2s;
+}
+
+.stat:nth-child(1) {border-top:4px solid #1683e8}
+.stat:nth-child(2) {border-top:4px solid #15bfd2}
+.stat:nth-child(3) {border-top:4px solid #765fe2}
+.stat:nth-child(4) {border-top:4px solid #20b981}
+
+.stat strong {
+  display:block;
+  font-size:31px;
+  color:var(--blue);
+}
+
+.stat span {
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* VISION */
+.vision-section {
+  background:#eaf3ff;
+}
+
+.vision-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  margin-top:25px;
+}
+
+.info-card {
+  background:white;
+  padding:30px;
+  border-radius:11px;
+  border:1px solid #dce9fa;
+  border-left:4px solid var(--blue);
+}
+
+.info-card:nth-child(2) {
+  border-left-color:var(--purple);
+}
+
+.info-card h3 {
+  color:var(--navy);
+  margin-bottom:12px;
+  font-size:20px;
+}
+
+.info-card p,
+.info-card li {
+  color:var(--muted);
+  font-size:14px;
+}
+
+.info-card ul {
+  padding-left:19px;
+}
+
+.info-card li {
+  margin-bottom:7px;
+}
+
+/* ORGANIZATION */
+.people-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:17px;
+  margin-top:30px;
+}
+
+.person {
+  background:white;
+  border:1px solid #e1e9f4;
+  border-radius:10px;
+  padding:25px 20px;
+  transition:.25s;
+}
+
+.person:hover {
+  border-color:#60b4ec;
+  transform:translateY(-4px);
+  box-shadow:0 10px 25px rgba(20,90,160,.08);
+}
+
+.person .role {
+  display:inline-block;
+  color:#1264c0;
+  background:#eaf4ff;
+  padding:5px 9px;
+  border-radius:4px;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1px;
+  margin-bottom:12px;
+}
+
+.person h3 {
+  font-size:15px;
+  color:var(--navy);
+  line-height:1.5;
+}
+
+.person p {
+  color:var(--muted);
+  font-size:12px;
+  margin-top:5px;
+}
+
+/* TEAMS */
+.team-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:17px;
+  margin-top:27px;
+}
+
+.team {
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(120deg,#0c3873,#1677c7);
+  padding:30px;
+  border-radius:11px;
+  color:white;
+}
+
+.team:nth-child(2) {
+  background:linear-gradient(120deg,#44318f,#7964dd);
+}
+
+.team h3 {
+  font-size:20px;
+  margin-bottom:5px;
+}
+
+.team p {
+  color:#e0edff;
+  font-size:13px;
+}
+
+/* CONTACT */
+.contact-section {
+  background:#eaf3ff;
+}
+
+.contact-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin-top:27px;
+}
+
+.contact-card {
+  background:white;
+  padding:28px;
+  border:1px solid #dce7f5;
+  border-radius:10px;
+  border-top:4px solid var(--blue);
+}
+
+.contact-card:nth-child(2) {
+  border-top-color:var(--purple);
+}
+
+.contact-card h3 {
+  color:var(--navy);
+  margin-bottom:8px;
+}
+
+.contact-card p {
+  color:var(--muted);
+  font-size:13px;
+}
+
+.contact-card a {
+  display:inline-block;
+  margin-top:15px;
+  background:#eaf4ff;
+  color:#1264c0;
+  padding:10px 14px;
+  border-radius:6px;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:bold;
+  transition:.2s;
+}
+
+.contact-card a:hover {
+  background:#1264c0;
+  color:white;
+}
+
+/* FOOTER */
+footer {
+  background:#06172f;
+  color:white;
+  padding:40px 22px;
+}
+
+.footer-content {
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+footer strong {
+  font-size:18px;
+}
+
+footer p {
+  color:#aebfd4;
+  font-size:12px;
+}
+
+.footer-credit {
+  text-align:right;
+}
+
+/* BACK TO TOP */
+.top-btn {
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:100;
+  width:45px;
+  height:45px;
+  border:0;
+  border-radius:9px;
+  background:var(--blue);
+  color:white;
+  font-size:20px;
+  cursor:pointer;
+  display:none;
+  box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.top-btn.show {
+  display:block;
+}
+
+/* RESPONSIVE */
+@media(max-width:800px) {
+  .menu-btn {
+    display:block;
+  }
+
+  .nav-links {
+    display:none;
+    position:absolute;
+    top:74px;
+    left:0;
+    width:100%;
+    background:white;
+    padding:15px 20px 22px;
+    border-bottom:1px solid #e3eaf2;
+    box-shadow:0 12px 20px rgba(0,0,0,.08);
+    flex-direction:column;
+    align-items:stretch;
+    gap:5px;
+  }
+
+  .nav-links.active {
+    display:flex;
+  }
+
+  .nav-links a {
+    padding:12px 15px;
+    font-size:14px;
+  }
+
+  .about-grid,
+  .vision-grid,
+  .contact-grid {
+    grid-template-columns:1fr;
+  }
+
+  .people-grid {
+    grid-template-columns:1fr 1fr;
+  }
+
+  .hero {
+    padding:80px 22px;
+  }
+
+  .container {
+    padding:65px 20px;
+  }
+}
+
+@media(max-width:480px) {
+  .people-grid,
+  .team-grid {
+    grid-template-columns:1fr;
+  }
+
+  .section-title {
+    font-size:27px;
+  }
+
+  .hero h1 {
+    font-size:49px;
+  }
+
+  .footer-credit {
+    text-align:left;
+  }
+
+  .intro h1 {
+    font-size:36px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<div class="intro" id="intro">
+  <div class="intro-content">
+
+    <img src="Itc-logo.jpg"
+         class="intro-logo"
+         alt="Logo ITC"
+         onerror="this.style.display='none'">
+
+    <p>SELAMAT DATANG DI</p>
+    <h1>INFORMATIKA<br>CLUB</h1>
+    <p>SMPN 34 Samarinda</p>
+
+    <button type="button" id="enterBtn">
+      MASUK KE WEBSITE →
+    </button>
+
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<header>
+  <nav class="navbar">
+
+    <a href="#home" class="brand">
+      <img src="Itc-logo.jpg"
+           alt="ITC"
+           onerror="this.style.display='none'">
+
+      <div>
+        Informatika Club
+        <span>SMPN 34 SAMARINDA</span>
+      </div>
+    </a>
+
+    <button type="button"
+            class="menu-btn"
+            id="menuBtn"
+            aria-label="Buka menu"
+            aria-expanded="false">
+      ☰
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Beranda</a></li>
+      <li><a href="#about">Tentang</a></li>
+      <li><a href="#vision">Visi Misi</a></li>
+      <li><a href="#organization">Pengurus</a></li>
+      <li><a href="#teams">Tim</a></li>
+      <li><a href="#contact">Kontak</a></li>
+    </ul>
+
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+
+    <div class="hero-label">
+      SMPN 34 SAMARINDA
+    </div>
+
+    <h1>Informatika<br><span>Club.</span></h1>
+
+    <div class="hero-line"></div>
+
+    <p>
+      Tempat belajar, berkembang, dan berkolaborasi
+      dalam dunia teknologi dan informatika.
+      Bersama membangun kreativitas dan kemampuan digital.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a href="#about" class="hero-button">
+        KENALI KAMI →
+      </a>
+
+      <a href="#contact" class="hero-button secondary">
+        HUBUNGI KAMI
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="container" id="about">
+  <div class="about-grid">
+
+    <div>
+      <div class="section-label">TENTANG KAMI</div>
+
+      <h2 class="section-title">
+        Mengenal Informatika Club
+      </h2>
+
+      <div class="divider"></div>
+
+      <div class="about-box">
+        <h3>What is ITC?</h3>
+
+        <p>
+          Informatika Club merupakan wadah bagi siswa
+          SMPN 34 Samarinda untuk mengenal teknologi,
+          mempelajari informatika, mengembangkan kreativitas,
+          dan bekerja sama dalam berbagai kegiatan.
+        </p>
+      </div>
+    </div>
+
+    <div class="stats">
+
+      <div class="stat">
+        <strong>01</strong>
+        <span>Organisasi</span>
+      </div>
+
+      <div class="stat">
+        <strong>IT</strong>
+        <span>Bidang Teknologi</span>
+      </div>
+
+      <div class="stat">
+        <strong>34</strong>
+        <span>SMP Negeri</span>
+      </div>
+
+      <div class="stat">
+        <strong>∞</strong>
+        <span>Kesempatan Belajar</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section class="vision-section" id="vision">
+  <div class="container">
+
+    <div class="section-label">ARAH ORGANISASI</div>
+    <h2 class="section-title">Visi & Misi</h2>
+    <div class="divider"></div>
+
+    <div class="vision-grid">
+
+      <div class="info-card">
+        <h3>Visi</h3>
+
+        <p>
+          Membangun lingkungan belajar teknologi yang kreatif,
+          aktif, inovatif, dan bermanfaat bagi siswa.
+        </p>
+      </div>
+
+      <div class="info-card">
+        <h3>Misi</h3>
+
+        <ul>
+          <li>Mengenalkan dasar-dasar informatika.</li>
+          <li>Mengembangkan kreativitas siswa.</li>
+          <li>Meningkatkan kemampuan bekerja sama.</li>
+          <li>Mendorong pemanfaatan teknologi secara positif.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ORGANIZATION -->
+<section class="container" id="organization">
+
+  <div class="section-label">STRUKTUR ORGANISASI</div>
+  <h2 class="section-title">Pengurus ITC</h2>
+
+  <p class="section-desc">
+    Orang-orang yang berperan dalam menjalankan
+    Informatika Club.
+  </p>
+
+  <div class="people-grid">
+
+    <div class="person">
+      <div class="role">FOUNDER</div>
+      <h3>Bapak Irwan</h3>
+      <p>Pendiri Informatika Club</p>
+    </div>
+
+    <div class="person">
+      <div class="role">KETUA</div>
+      <h3>Hansen Ramdan Arifin</h3>
+      <p>Ketua Informatika Club</p>
+    </div>
+
+    <div class="person">
+      <div class="role">WAKIL KETUA</div>
+      <h3>Muhammad Yusuf Setiaga</h3>
+      <p>Wakil Ketua Informatika Club</p>
+    </div>
+
+    <div class="person">
+      <div class="role">DOKUMENTASI</div>
+      <h3>Ahmad Ryuga</h3>
+      <p>Dokumentator dan Desainer</p>
+    </div>
+
+    <div class="person">
+      <div class="role">SEKRETARIS 1</div>
+      <h3>Abid Syafwan Zulkarnain</h3>
+      <p>Sekretaris Organisasi</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- TEAMS -->
+<section class="vision-section" id="teams">
+  <div class="container">
+
+    <div class="section-label">DIVISI ORGANISASI</div>
+    <h2 class="section-title">Tim ITC</h2>
+
+    <p class="section-desc">
+      Tim yang akan menjadi bagian dari kegiatan
+      dan pengembangan Informatika Club.
+    </p>
+
+    <div class="team-grid">
+
+      <div class="team">
+        <h3>Team 01</h3>
+        <p>Coming Soon</p>
+      </div>
+
+      <div class="team">
+        <h3>Team 02</h3>
+        <p>Coming Soon</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="container">
+
+    <div class="section-label">HUBUNGI KAMI</div>
+    <h2 class="section-title">Kontak ITC</h2>
+
+    <p class="section-desc">
+      Hubungi Informatika Club untuk informasi lebih lanjut.
+    </p>
+
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <h3>Kontak 01</h3>
+        <p>6282250946807</p>
+
+        <a href="https://wa.me/6282250946807"
+           target="_blank"
+           rel="noopener">
+          Hubungi WhatsApp →
+        </a>
+      </div>
+
+      <div class="contact-card">
+        <h3>Kontak 02</h3>
+        <p>628135655144</p>
+
+        <a href="https://wa.me/628135655144"
+           target="_blank"
+           rel="noopener">
+          Hubungi WhatsApp →
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+
+    <div>
+      <strong>Informatika Club</strong>
+      <p>SMPN 34 Samarinda</p>
+      <p>Belajar • Berkarya • Berinovasi</p>
+    </div>
+
+    <div class="footer-credit">
+      <p>Website dibuat oleh</p>
+      <strong>Yusuf.</strong>
+      <p>© <span id="year"></span> Informatika Club.</p>
+    </div>
+
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="top-btn"
+        id="topBtn"
+        type="button"
+        aria-label="Kembali ke atas">
+  ↑
+</button>
+
+<script>
+document.addEventListener("DOMContentLoaded",function() {
+
+  const intro = document.getElementById("intro");
+  const enterBtn = document.getElementById("enterBtn");
+  const menuBtn = document.getElementById("menuBtn");
+  const navLinks = document.getElementById("navLinks");
+  const topBtn = document.getElementById("topBtn");
+
+  // TAHUN OTOMATIS
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+  // MASUK WEBSITE
+  enterBtn.addEventListener("click",function() {
+    intro.classList.add("hide");
+
+    setTimeout(function() {
+      intro.style.display="none";
+    },550);
+  });
+
+  // MENU MOBILE
+  function openMenu() {
+    navLinks.classList.add("active");
+    menuBtn.textContent="✕";
+    menuBtn.setAttribute("aria-expanded","true");
+  }
+
+  function closeMenu() {
+    navLinks.classList.remove("active");
+    menuBtn.textContent="☰";
+    menuBtn.setAttribute("aria-expanded","false");
+  }
+
+  menuBtn.addEventListener("click",function() {
+    if(navLinks.classList.contains("active")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  // NAVIGASI
+  const links=document.querySelectorAll(".nav-links a");
+
+  links.forEach(function(link) {
+    link.addEventListener("click",function(event) {
+
+      const targetId=this.getAttribute("href");
+      const target=document.querySelector(targetId);
+
+      closeMenu();
+
+      if(target) {
+        event.preventDefault();
+
+        links.forEach(function(item) {
+          item.classList.remove("active");
+        });
+
+        this.classList.add("active");
+
+        target.scrollIntoView({
+          behavior:"smooth",
+          block:"start"
+        });
+
+        history.replaceState(null,"",targetId);
+      }
+    });
+  });
+
+  // TUTUP MENU SAAT KLIK DI LUAR
+  document.addEventListener("click",function(event) {
+    if(
+      !navLinks.contains(event.target) &&
+      !menuBtn.contains(event.target)
+    ) {
+      closeMenu();
+    }
+  });
+
+  // TUTUP MENU DENGAN ESCAPE
+  document.addEventListener("keydown",function(event) {
+    if(event.key==="Escape") {
+      closeMenu();
+    }
+  });
+
+  // KEMBALI KE ATAS
+  window.addEventListener("scroll",function() {
+    if(window.scrollY>350) {
+      topBtn.classList.add("show");
+    } else {
+      topBtn.classList.remove("show");
+    }
+  });
+
+  topBtn.addEventListener("click",function() {
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    });
+  });
+
+});
+</script>
+
+</body>
+  </html>
